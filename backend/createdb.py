@@ -27,22 +27,6 @@ try:
                 )
                 ''')
     
-    cur.execute('''CREATE TABLE proveedores 
-                (proveedorID INT not null primary key,
-                name NVARCHAR(255) null,
-                nif NVARCHAR(255) null,
-                prenda NVARCHAR(255) null,
-                cantidad INT null,
-                precio_unidad FLOAT null,
-                phone INT null
-                )
-               ''')
-    
-    cur.execute('''CREATE TABLE descuentos
-                (codigoID NVARCHAR(255) not null primary key,
-                descuento INT null
-                )
-                ''')
 
 except sqlite3.Error as e:
     print("Base de datos ya existe", e)
