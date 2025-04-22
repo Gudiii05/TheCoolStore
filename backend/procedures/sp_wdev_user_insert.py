@@ -23,9 +23,10 @@ def insertar_usuario(username, address, passwd):
         # Confirmar cambios
         con.commit()
 
-        # Si se insertó correctamente, retornar 0
+        # Si se insertó correctamente retornar 0
         return 0
 
+        # Si no se inserto correctamente retornar -1
     except sqlite3.Error as e:
         print("Error al insertar usuario:", e)
         return -1
