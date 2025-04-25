@@ -23,6 +23,7 @@ def user_exists(username):
     con.close()
     return result is not None
 
+'''
 # Ejemplo de uso
 if user_exists(username):
     print("Usuario existe.")
@@ -31,4 +32,4 @@ if user_exists(username):
 else:
     print("Usuario no existe.")
     userExist = False
-
+'''
