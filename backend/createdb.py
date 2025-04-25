@@ -2,16 +2,6 @@ import sqlite3
 
 # -----------Tablas----------- #
 
-# Proveedor
-suppliers = '''CREATE TABLE suppliers 
-                (supplierID INTEGER NOT null primary key,
-                productID INTEGER NOT null,
-                name TEXT NOT null,
-                phone TEXT NOT null,
-                FOREIGN KEY(productID) REFERENCES products(productID)
-                );
-               '''
-
 tablas = [
     {
         # Usuarios
