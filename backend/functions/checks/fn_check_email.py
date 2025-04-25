@@ -19,11 +19,11 @@ con.create_function("fn_check_email", 1, fn_check_email)
 
 # Test unitario 
 
-cur = con.execute("SELECT fn_check_email('correo@example.com')")
-print("Resultado primer test (correo@example.com):", cur.fetchone()[0])  # → 1, exitoso
+# cur = con.execute("SELECT fn_check_email('correo@example.com')")
+# print("Resultado primer test (correo@example.com):", cur.fetchone()[0])  # → 1, exitoso
 
-cur = con.execute("SELECT fn_check_email('correo.com')")
-print("Resultado segundo test (correo.com):", cur.fetchone()[0])  # → 0, erroneo
+# cur = con.execute("SELECT fn_check_email('correo.com')")
+# print("Resultado segundo test (correo.com):", cur.fetchone()[0])  # → 0, erroneo
 
 # ---------------------------------------------------------------- #
 
