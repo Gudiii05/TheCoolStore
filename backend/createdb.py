@@ -2,51 +2,6 @@ import sqlite3
 
 # -----------Tablas----------- #
 
-# Usuarios
-users = '''CREATE TABLE users 
-                (userID TEXT not null primary key,
-                name TEXT NOT null,
-                surname TEXT NOT null,
-                password TEXT NOT null,
-                phone TEXT null,
-                email TEXT NOT null,
-                admin INTEGER not null
-                );
-               '''
-#-------------------------------------------------#
-
-# Descuentos
-discounts = '''CREATE TABLE discounts 
-                (codeID TEXT NOT null primary key,
-                discount_amount REAL NOT null
-                );
-               '''
-
-#-------------------------------------------------#
-
-# Categorias (cachimba, cazoleta, carbones...)
-categories = '''CREATE TABLE categories 
-                (categoryID INTEGER NOT null primary key,
-                name TEXT NOT null
-                );
-               '''
-
-#-------------------------------------------------#
-
-# Productos
-products = '''CREATE TABLE products 
-                (productID INT NOT null primary key,
-                categoryID INTEGER NOT null,
-                name TEXT NOT null,
-                price REAL NOT null,
-                description TEXT null,
-                stock INT NOT null,
-                FOREIGN KEY(categoryID) REFERENCES categories(categoryID)
-                );
-               '''
-
-#-------------------------------------------------#
-
 # Proveedor
 suppliers = '''CREATE TABLE suppliers 
                 (supplierID INTEGER NOT null primary key,
