@@ -5,20 +5,21 @@ import sqlite3
 username = ""
 passwd = ""
 address = ""
+email = ""
 
 
 #--------------------------------
 
-def insertar_usuario(username, address, passwd):
+def insertar_usuario(username, address, passwd, email):
     try:
         con = sqlite3.connect("store.db")
         cur = con.cursor()
 
         # Ejecutar el insert
         cur.execute("""
-            INSERT INTO users (userID, address, password)
-            VALUES (?, ?, ?)
-        """, (username, address, passwd))
+            INSERT INTO users (userID, name, address, password, email)
+            VALUES (?, ?, ?, ? , ?)
+        """, (email, username, address, email, passwd))
 
         # Confirmar cambios
         con.commit()
