@@ -8,14 +8,20 @@ username = ""
 passwd = ""
 email = ""
 address = ""
-class register_form():
+class register_form(ft.Container):
     def __init__(self):
+        super().__init__()
+        self.bgcolor=ft.Colors.AMBER
+        self.width=500
+        self.height=500
+
         #campos entrada
         self.username = ft.TextField(hint_text="Username")
         self.password = ft.TextField(hint_text="Password", password=True)
         self.email = ft.TextField(hint_text="Email")
         self.address = ft.TextField(hint_text="Address")
-
+        
+        self.content = self.campos()
         
     def campos(self):
         #boton registro
@@ -34,7 +40,7 @@ class register_form():
             horizontal_alignment=ft.CrossAxisAlignment.CENTER
         )
 
-    def enviar_form(self):
+    def enviar_form(self,e):
         username = self.username.value
         passwd = self.password.value
         email = self.email.value
@@ -45,18 +51,7 @@ class register_form():
         else:
             correcto = True
         
-
-if __name__ == "__main__":
-    if correcto == True:
-        insertar_usuario(username, address, passwd, email)
-
-ft.app(target="register_form")
-
-
-        
-
-
-
-
+        if correcto == True:
+            insertar_usuario(username, address, passwd, email)
 
 

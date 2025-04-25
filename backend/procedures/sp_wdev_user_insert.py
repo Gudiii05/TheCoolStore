@@ -14,10 +14,10 @@ def insertar_usuario(username, address, passwd, email):
     try:
         con = sqlite3.connect("store.db")
         cur = con.cursor()
-
+        print("Hola insertar")
         # Ejecutar el insert
         cur.execute("""
-            INSERT INTO users (userID, name, address, password, email)
+            INSERT INTO usuarios (userID, name, address, password, email)
             VALUES (?, ?, ?, ? , ?)
         """, (email, username, address, email, passwd))
 
