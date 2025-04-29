@@ -67,7 +67,7 @@ tablas = [
                     address TEXT not null,
                     quantity INTEGER not null,
                     unit_price REAL not null,
-                    comments TEXT null,
+                    comments TEXT default NULL null,
                     FOREIGN KEY(userID) REFERENCES users(userID),
                     FOREIGN KEY(productID) REFERENCES products(productID)
                     );'''
