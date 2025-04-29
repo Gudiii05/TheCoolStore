@@ -13,7 +13,7 @@ tablas = [
                     password TEXT NOT null,
                     phone TEXT null,
                     email TEXT NOT null,
-                    admin INTEGER not null
+                    admin INTEGER default 0 not null
                     );'''
     },
     {
@@ -63,11 +63,11 @@ tablas = [
                     (orderID INTEGER NOT null PRIMARY KEY,
                     userID TEXT NOT null,
                     productID INTEGER NOT null,
-                    detailID INTEGER,
-                    address TEXT,
-                    quantity INTEGER,
-                    unit_price REAL,
-                    comments TEXT,
+                    detailID INTEGER not null,
+                    address TEXT not null,
+                    quantity INTEGER not null,
+                    unit_price REAL not null,
+                    comments TEXT null,
                     FOREIGN KEY(userID) REFERENCES users(userID),
                     FOREIGN KEY(productID) REFERENCES products(productID)
                     );'''
