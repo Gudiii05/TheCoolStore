@@ -55,6 +55,22 @@ tablas = [
                     phone TEXT NOT null,
                     FOREIGN KEY(productID) REFERENCES products(productID)
                     );'''
+    },
+    {
+        # Pedidos
+        "nombre": "orders",
+        "sql": '''CREATE TABLE IF NOT EXISTS orders 
+                    (orderID INTEGER NOT null PRIMARY KEY,
+                    userID TEXT NOT null,
+                    productID INTEGER NOT null,
+                    detailID INTEGER,
+                    address TEXT,
+                    quantity INTEGER,
+                    unit_price REAL,
+                    comments TEXT,
+                    FOREIGN KEY(userID) REFERENCES users(userID),
+                    FOREIGN KEY(productID) REFERENCES products(productID)
+                    );'''
     }
 ]
 
