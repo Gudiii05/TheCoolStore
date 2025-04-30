@@ -1,34 +1,23 @@
 #-------------------------------------------
-#Imports y declaracion variables
+#Imports 
 import sqlite3
-#importar frontend para variable username
-username = "" #importar variable usuario
-userExist = None
+
 
 #---------------------------------------------
 
-
-#conexion a la base de datos fichero
-con = sqlite3.connect("store.db")
-
-#permite intreractuar a la BD
-cur = con.cursor()
-
-def user_exists(username):
-    con = sqlite3.connect("store.db")
+def fn_user_exists(user):
+    con = sqlite3.connect("TheCoolStore_DB.db")
     cur = con.cursor()
 
-    cur.execute("SELECT 1 FROM usuarios WHERE userID = ?", (username)) #comprueba si la var username, esta en la tabla usuarios
+    cur.execute("SELECT 1 FROM users WHERE userID = ?", (user,)) #comprueba si la var username, esta en la tabla usuarios
     result = cur.fetchone()
     con.close()
-    return result is not None
+
+    return True if result != None else False
+
 
 # Ejemplo de uso
-if user_exists(username):
-    print("Usuario existe.")
-    userExist = True
+# print(fn_user_exists("ahmed.khalil@example.com")) # -> Devuelve True
 
-else:
-    print("Usuario no existe.")
-    userExist = False
+# print(fn_user_exists("")) # -> Devuelve False
 
