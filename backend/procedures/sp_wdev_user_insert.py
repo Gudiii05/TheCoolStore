@@ -19,7 +19,7 @@ def insertar_usuario(username, address, passwd, email):
         cur.execute("""
             INSERT INTO usuarios (userID, name, address, password, email)
             VALUES (?, ?, ?, ? , ?)
-        """, (email, username, address, email, passwd))
+        """, (email, username, address, passwd, email))
 
         # Confirmar cambios
         con.commit()
